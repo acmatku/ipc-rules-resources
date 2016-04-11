@@ -2,7 +2,7 @@
 
 In this repo we keep a PDF handbook for the ACM@KU Intramural Programming Competition. This PDF has the rules for the competition, as well as examples of programs properly written to be judged by the DOMJudge automated judging system. 
 
-Full descriptions of the two short sample problems are provided in the ``examples`` folder.
+Full descriptions of the two short sample problems are provided in the handbook PDF and in problem PDFs residing in the ``examples`` folder.
 
 # Maintaining
 
