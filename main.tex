@@ -43,6 +43,37 @@
   	stringstyle=\color{mymauve}, 
 }
 
+\lstdefinelanguage{JavaScript}{
+    keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+    keywordstyle=\color{blue}\bfseries,
+    ndkeywords={class, export, boolean, throw, implements, import, this},
+    ndkeywordstyle=\color{darkgray}\bfseries,
+    identifierstyle=\color{black},
+    sensitive=false,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    commentstyle=\color{mygreen}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    morestring=[b]',
+    morestring=[b]"
+}
+
+\lstset{
+    language=JavaScript,
+    backgroundcolor=\color{white},
+    extendedchars=true,
+    basicstyle=\footnotesize\ttfamily,
+    showstringspaces=false,
+    showspaces=false,
+    numbers=left,
+    numberstyle=\footnotesize,
+    numbersep=8pt,
+    tabsize=2,
+    breaklines=true,
+    showtabs=false,
+    captionpos=b
+}
+
 \title{ACM@KU, Intramural Programming Competition: \\ 
 Rules, Resources, and Examples}
 
@@ -258,6 +289,11 @@ Ruby uses a special variable \texttt{\$stdin} to represent console input. The me
 A solution in PHP:
 \lstinputlisting[language=PHP]{examples/01/say-hello.php}
 PHP can simply iterate over \texttt{stdin} by looping as long as \texttt{fgets(STDIN)} is not null. Since PHP does not really need to allocate arrays of fixed size, we can in this case ignore the first line of input, which is just an integer indicating the number of subsequent lines, so we call \texttt{fgets} and do not assign the returned value.
+\newpage
+
+A solution in JavaScript
+\lstinputlisting[language=JavaScript]{examples/01/say-hello.js}
+JavaScript is special. By default Node.js performs reading from \texttt{stdin} asynchronously, but this is in conflict with how DOMJudge runs. Lines 1 through 25 allow us to read from \texttt{stdin} synchronously. This input is put in the variable named \texttt{stdin} declared on line 6. This code can be replicated into all your solutions. One thing to note however, is that when we separate the \texttt{stdin} input variable by newlines, we end up with an array that has the first integer of input, and a trailing empty string, so when we iterate over each line with \texttt{forEach}, we keep track of our position with a variable \texttt{i}. This way, we only print what we need to. By using the code at the beginning of the file, and keeping in mind the trailing empty string of newline separated input, JavaScript can be just as speedy for coding as any other language allowed by the competition. 
 \newpage
 
 \subsection{Fraction Simplification}
