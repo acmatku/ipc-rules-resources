@@ -63,9 +63,11 @@ The ACM@KU Intramural Programming Competition is an ACM-style programming compet
 \begin{center}
     C \\
     C\texttt{++} \\
+    Clojure \\
     Haskell \\
     Java 8 \\ 
-    JavaScript (via Node.js) \\
+    Lua \\
+    PHP \\
     Python (v. 2.7 and 3.4) \\
     Ruby \\
 \end{center}
@@ -252,6 +254,10 @@ A solution in Ruby:
 \lstinputlisting[language=Ruby]{examples/01/say-hello.rb}
 
 Ruby uses a special variable \texttt{\$stdin} to represent console input. The method \texttt{each\_line} grabs all the lines from \texttt{stdin} at one time, and the method \texttt{each\_with\_index} allow us to keep track of our position in the loop. Since the first line is just a silly integer, we can use the index of 0 to skip it, then we can do what we'd like with subsequent lines. In our case, we use the function \texttt{puts} to write to \texttt{stdout}. You'd likely replicate this looping pattern if you decide to use Ruby.
+
+A solution in PHP:
+\lstinputlisting[language=PHP]{examples/01/say-hello.php}
+PHP can simply iterate over \texttt{stdin} by looping as long as \texttt{fgets(STDIN)} is not null. Since PHP does not really need to allocate arrays of fixed size, we can in this case ignore the first line of input, which is just an integer indicating the number of subsequent lines, so we call \texttt{fgets} and do not assign the returned value.
 \newpage
 
 \subsection{Fraction Simplification}
